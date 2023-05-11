@@ -9,7 +9,7 @@ const mongoDBstore = require("connect-mongodb-session")(session);
 const { flash } = require('express-flash-message');
 
 const Post = require("./model/post.js");
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 
 const csrf = require("csurf");
