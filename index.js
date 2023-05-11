@@ -9,7 +9,7 @@ const mongoDBstore = require("connect-mongodb-session")(session);
 const { flash } = require('express-flash-message');
 
 const Post = require("./model/post.js");
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT;
 
 
 const csrf = require("csurf");
@@ -30,6 +30,7 @@ const { render } = require("express/lib/response");
 const req = require("express/lib/request");
 const { nextTick } = require("process");
 const { post } = require("request");
+mongoose.set('strictQuery', true)
 const mongoDB_URI = "mongodb://localhost:27017/sharewith";
 
 
