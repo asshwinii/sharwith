@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achievement / Experience</title>
+  <link rel="stylesheet" href="/forum.css">
+  <link rel="stylesheet" href="/found.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <%- include('partials/head'); %>
+    <div class="main_content">
+        <div class="header">Notices.</div> 
+        <div class="post" style="margin-top:5px;">
+          <div class="form-group" style="margin-left: 20%;margin-right: 20%;"  enctype="multipart/form-data">
+              <form action="/create?_csrf=<%= csrfToken %>" method="POST">
+                  <label for="title" >Title</label>
+                  <input type="text" name="title" class="form-control form-control" id="title">
+    
+                  <div class="form-group" hidden="hidden">
+                      <label for="cat" >Category:</label>
+                      <select class="form-control" id="cat" name="category">
+                          <option>Notice</option>
+                      </select>
+                  </div>
+    
+                  <label for="content" >Description:</label>
+                  <br>
+                  <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+                  <label class="form-label" for="image">choose</label>
+              <input type="file" class="form-control" id="image" name="file" accept="image/*" />
+                  <br>
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button type="submit" class="btn btn-primary" style="margin-top: 1%; margin-bottom: 1%;">post</button>
+    
+                </form>
+            </div> 
+       </div>
+       <% for(let i=notices.length-1; i>=0;i-=3){%>
+        <div class="container">
+          <div class="row">
+            <% if(i>=0){%>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-image">
+                    <img class="img-responsive" src="/uploads/notices[i].image">
+                    <span class="card-title">
+                      <%=notices[i].title %>
+                    </span>
+                  </div>
+
+                  <div class="card-content">
+                    <p>
+                      <%= notices[i].content %>
+                    </p>
+                  </div>
+
+                  <div class="card-action">
+                    <a href="/singleBlog/<%=notices[i].id %>" target="new_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <%}%>
+                <% if(i-1>=0){%>
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-responsive" src="/uploads/notices[i-1].image">
+                        <span class="card-title"><%=notices[i-1].title %></span>
+                      </div>
+
+                      <div class="card-content">
+                        <p>
+                          <%= notices[i-1].content %>
+                        </p>
+                      </div>
+
+                      <div class="card-action">
+                        <a href="/singleBlog/<%=notices[i-1].id %>" target="new_blank">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+                    <% if(i-2>=0){%>
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-image">
+                            <img class="img-responsive" src="/uploads/notices[i-2].image">
+                            <span class="card-title"><%=notices[i-2].title %></span>
+                          </div>
+
+                          <div class="card-content">
+                            <p>
+                              <%= notices[i-2].content %>
+                            </p>
+                          </div>
+
+                          <div class="card-action">
+                            <a href="/singleBlog/<%=notices[i-2].id %>" target="new_blank">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <% } %>
+                      
+          </div>
+          <%}%>
+        <footer style="margin-bottom:2%;margin-top:2%; text-align: center;">
+          <p>&copy;  <h2>About Us</h2>
+            <p>Email: admin@sharewith.com</p>
+            <p>contact No: (+91)933-6842-211</p>.</p>
+        </footer>
+    </div>
+
+</div>
+  
+</body>
+
+</html>

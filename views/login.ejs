@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>signup page</title>
+  <link rel="stylesheet" href="/forum.css">
+  <link rel="stylesheet" href="/login.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/head'); %>
+      <div class="main_content" style="text-align: center;">
+        <br><br><br><br><br>
+        <div class="container1">
+          <div class="card-header">
+            Login Your Account
+          </div>
+
+          <h2 style="font-size:20px;">
+            <%= message %>
+          </h2>
+          
+
+          <form action="/login" method="POST">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" name="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter password" />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            </div>
+          
+          </form>
+
+          <footer style="margin-bottom:2%;margin-top:2%; text-align: center;">
+            <p>&copy;
+            <h2>About Us</h2>
+            <p>Email: admin@sharewith.com</p>
+            <p>contact No: (+91)933-6842-211</p>.</p>
+          </footer>
+        </div>
+
+      </div>
+
+
+
+</body>
+
+</html>

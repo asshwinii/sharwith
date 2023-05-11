@@ -1,0 +1,35 @@
+<div class="sidebar">
+    <h2 style="text-decoration-color: aliceblue;">Share With</h2>
+    <ul>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/blog"><i class="fas fa-blog"></i>Acheivement / Experience</a></li>
+        <li><a href="/notice"><i class=""></i> Notices</a></li>
+        <li><a href="/found"><i class=""></i> Found</a></li>
+        <li><a href="/lost"><i ></i> Lost</a></li>
+        <li><a href="/forum"><i class=""></i> forum</a></li>
+
+
+          <% if(isloggedIn){ %>
+            <li >
+                <a href="/logout">Logout <%= username %> </a>
+            </li>
+            <li><a href="/profile"><i class="fas fa-user"></i>Profile</a></li>
+            <% } else{ %>
+        <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                login/signup
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/signup">Signup</a></li>
+            </ul>
+        </li>
+        <% }%>
+        <li class="nav-item">
+          <a class="nav-link" href="/search">Search</a>
+      </li>
+        
+    </ul> 
+   
+</div>

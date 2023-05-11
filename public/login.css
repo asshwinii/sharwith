@@ -1,0 +1,15 @@
+.main_content{
+    background: url('college.jpg') ;
+    padding-top:2.5%;
+    padding-bottom:2.5%;
+    margin-top:5px;
+}
+.container1{
+    background-color: white;
+    margin-left: 35%;
+    padding-top: 3%;
+    width:30%;
+    border-radius: 20px;
+    padding-left:2%;
+    padding-right:2%;
+}

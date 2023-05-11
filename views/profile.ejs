@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>share with</title>
+    <link rel="stylesheet" href="/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('partials/head'); %>
+
+    <div class="container1">
+        <div class="container2">
+            <img src="./profile_symbol.png" alt="">
+        </div>
+        <div class="container4" style="color: white;">
+            <h1 ><%= name%></h1>
+            <p> Username :<%= username %></p>
+            <p>Email : <%= email %></p>
+            
+        </div>
+    </div>
+    <div>
+        <span class="divider"></span>
+    </div>
+
+
+        
+    <div class="blog" >
+        <h2 style="color: white; text-align: center;">Blogs</h2>
+        <% for(let i in blogs){%>
+            <div class="card text-center" style="border-radius:50px;">
+              <div class="card-header">
+                <%= blogs[i].author %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= blogs[i].title %></h5>
+                <p class="card-text"><%= blogs[i].content %></p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+              <div class="card-footer text-muted">
+                <%= blogs[i].date %>
+              </div>
+            </div>
+         <% } %>
+    </div>
+        
+    <div>
+        <span class="divider"></span>
+    </div>
+
+    <div class="blog" >
+        <h2 style="color: white; text-align: center;">Notices</h2>
+        <% for(let i in notices){%>
+            <div class="card text-center" style="border-radius:50px;">
+              <div class="card-header">
+                <%= notices[i].author %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= notices[i].title %></h5>
+                <p class="card-text"><%= notices[i].content %></p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+              <div class="card-footer text-muted">
+                <%= notices[i].date %>
+              </div>
+            </div>
+         <% } %>
+    </div>
+        
+    <div>
+        <span class="divider"></span>
+    </div>
+    <div class ="container3" style="text-align: center;">
+        <h2>About Us</h2>
+        <p>Email: admin@sharewith.com</p>
+        <p>contact No: (+91)933-6842-211</p>
+    </div>
+    <footer style="margin-bottom:2%;margin-top:2%;text-align:center;">
+      <p>&copy;  <h2>About Us</h2>
+        <p>Email: admin@sharewith.com</p>
+        <p>contact No: (+91)933-6842-211</p>.</p>
+    </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+</html>

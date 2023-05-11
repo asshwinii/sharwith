@@ -1,0 +1,44 @@
+.container1{
+    width:100%;
+    height:auto;
+    align-items: center;
+    display: flex;
+    background:url("signup.jpg");
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    border-radius: 40px;
+    margin-top:5px;
+}
+.container2{
+    width:150px;
+    height:150px;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+.blog{
+    background: url("signup.jpg");
+    padding-top:2.5%;
+    padding-bottom:2.5%;
+    border-radius: 40px;
+    margin-top:5px;
+}
+.card{
+    margin-top:2.5%;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:2.5%;
+    border-radius: 25px;
+    box-shadow: 1rem 1rem;
+    border-radius: 50px;
+}
+.divider {
+    text-align: center;
+    width: 100%;
+    height: 3px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+}
