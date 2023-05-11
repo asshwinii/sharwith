@@ -35,10 +35,10 @@ mongoose.set('strictQuery', false);
 
 
 
-// const store =  new mongoDBstore({
-//     uri : mongoDB_URI,
-//     collection: 'sessions',
-// });
+const store =  new mongoDBstore({
+    uri : MONGO_URI,
+    collection: 'sessions',
+});
 
 const connectDB = async ()=> {
     try{
