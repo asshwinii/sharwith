@@ -52,7 +52,7 @@ const connectDB = async ()=> {
 
 app.use(bodyparser.urlencoded({extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
-app.use(session({secret:'my secret code' , resave: false , saveUninitialized: false, store:store}));
+//app.use(session({secret:'my secret code' , resave: false , saveUninitialized: false, store:store}));
 app.set("view engine","ejs");
 app.use(flash({ sessionKeyName: 'flashMessage' }));
 app.use(csrfProtection);
