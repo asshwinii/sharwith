@@ -36,7 +36,7 @@ mongoose.set('strictQuery', false);
 
 
 const store =  new mongoDBstore({
-    uri : MONGO_URI,
+    uri : process.env.MONGO_URI,
     collection: 'sessions',
 });
 
