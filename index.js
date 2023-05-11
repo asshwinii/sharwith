@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const session = require("express-session");
@@ -30,16 +30,25 @@ const { render } = require("express/lib/response");
 const req = require("express/lib/request");
 const { nextTick } = require("process");
 const { post } = require("request");
-mongoose.set('strictQuery', true)
-const mongoDB_URI = "mongodb://localhost:27017/sharewith";
+mongoose.set('strictQuery', false);
+//const mongoDB_URI = "mongodb://localhost:27017/sharewith";
 
 
 
-const store =  new mongoDBstore({
-    uri : mongoDB_URI,
-    collection: 'sessions',
-});
+// const store =  new mongoDBstore({
+//     uri : mongoDB_URI,
+//     collection: 'sessions',
+// });
 
+const connectDB = async ()=> {
+    try{
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`mongoDB connected : ${conn.connection.host}`);
+    }catch(error){
+        console.log(error);
+        process.exit(1);
+    }
+}
 
 app.use(bodyparser.urlencoded({extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
