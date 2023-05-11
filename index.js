@@ -31,7 +31,7 @@ const req = require("express/lib/request");
 const { nextTick } = require("process");
 const { post } = require("request");
 mongoose.set('strictQuery', false);
-//const mongoDB_URI = "mongodb://localhost:27017/sharewith";
+const mongoDB_URI = "mongodb://localhost:27017/sharewith";
 
 
 
