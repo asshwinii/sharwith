@@ -95,6 +95,6 @@ app.listen(PORT, () =>{
     console.log("Listening at 3000")
 });
 
-// mongoose.connect(mongoDB_URI, () => {
-//     console.log("connected to db");
-// });
+mongoose.connect(process.env.MONGO_URI, () => {
+    console.log("connected to db");
+});
