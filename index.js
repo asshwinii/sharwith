@@ -40,19 +40,19 @@ const store =  new mongoDBstore({
     collection: 'sessions',
 });
 
-// const connectDB = async ()=> {
-//     try{
-//         const conn = await mongoose.connect(process.env.MONGO_URI);
-//         console.log(`mongoDB connected : ${conn.connection.host}`);
-//     }catch(error){
-//         console.log(error);
-//         process.exit(1);
-//     }
-// }
+const connectDB = async ()=> {
+    try{
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`mongoDB connected : ${conn.connection.host}`);
+    }catch(error){
+        console.log(error);
+        process.exit(1);
+    }
+}
 
 app.use(bodyparser.urlencoded({extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
-//app.use(session({secret:'my secret code' , resave: false , saveUninitialized: false, store:store}));
+app.use(session({secret:'my secret code' , resave: false , saveUninitialized: false, store:store}));
 app.set("view engine","ejs");
 app.use(flash({ sessionKeyName: 'flashMessage' }));
 app.use(csrfProtection);
@@ -95,6 +95,6 @@ app.listen(PORT, () =>{
     console.log("Listening at 3000")
 });
 
-mongoose.connect(mongoDB_URI, () => {
-    console.log("connected to db");
-});
+// mongoose.connect(mongoDB_URI, () => {
+//     console.log("connected to db");
+// });
